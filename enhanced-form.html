@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced HTML5 Form - Student Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #333;
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .form-section {
+            margin: 30px 0;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 5px;
+        }
+        
+        .form-section h2 {
+            color: #555;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+        }
+        
+        .form-group {
+            margin: 15px 0;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+        
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #4CAF50;
+            box-shadow: 0 0 5px rgba(76,175,80,0.3);
+        }
+        
+        input:invalid {
+            border-color: #f44336;
+        }
+        
+        input:valid {
+            border-color: #4CAF50;
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .form-row .form-group {
+            flex: 1;
+        }
+        
+        fieldset {
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        legend {
+            font-weight: bold;
+            color: #555;
+            padding: 0 10px;
+        }
+        
+        .checkbox-group, .radio-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .checkbox-item, .radio-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .checkbox-item input, .radio-item input {
+            width: auto;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        
+        ul, ol {
+            padding-left: 20px;
+        }
+        
+        .media-section {
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        audio, video {
+            max-width: 100%;
+            margin: 10px 0;
+        }
+        
+        .submit-section {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 2px solid #ddd;
+        }
+        
+        button {
+            background: #4CAF50;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 0 10px;
+        }
+        
+        button:hover {
+            background: #45a049;
+        }
+        
+        button[type="reset"] {
+            background: #f44336;
+        }
+        
+        button[type="reset"]:hover {
+            background: #da190b;
+        }
+        
+        .error-message {
+            color: #f44336;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        
+        .readonly-field {
+            background-color: #e9e9e9;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Student Registration System</h1>
+            <p>Complete this comprehensive form to register for our academic program</p>
+        </header>
+        
+        <main>
+            <!-- Information Lists -->
+            <section class="form-section">
+                <h2>Program Requirements</h2>
+                <h3>Required Documents (Ordered List):</h3>
+                <ol>
+                    <li>Official transcripts from previous institutions</li>
+                    <li>Letters of recommendation (minimum 2)</li>
+                    <li>Personal statement or essay</li>
+                    <li>Proof of English proficiency (if applicable)</li>
+                    <li>Government-issued photo identification</li>
+                </ol>
+                
+                <h3>Available Study Areas (Unordered List):</h3>
+                <ul>
+                    <li>Computer Science & Information Technology</li>
+                    <li>Business Administration & Management</li>
+                    <li>Engineering & Applied Sciences</li>
+                    <li>Liberal Arts & Humanities</li>
+                    <li>Natural Sciences & Mathematics</li>
+                    <li>Social Sciences & Psychology</li>
+                </ul>
+            </section>
+            
+            <!-- Course Schedule Table -->
+            <section class="form-section">
+                <h2>Sample Course Schedule</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Course Code</th>
+                            <th>Course Name</th>
+                            <th>Credits</th>
+                            <th>Schedule</th>
+                            <th>Instructor</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>CS-101</td>
+                            <td>Introduction to Programming</td>
+                            <td>3</td>
+                            <td>MWF 9:00-10:00</td>
+                            <td>Dr. Smith</td>
+                        </tr>
+                        <tr>
+                            <td>MATH-201</td>
+                            <td>Calculus II</td>
+                            <td>4</td>
+                            <td>TTh 11:00-12:30</td>
+                            <td>Prof. Johnson</td>
+                        </tr>
+                        <tr>
+                            <td>ENG-102</td>
+                            <td>Academic Writing</td>
+                            <td>3</td>
+                            <td>MWF 2:00-3:00</td>
+                            <td>Dr. Williams</td>
+                        </tr>
+                        <tr>
+                            <td>HIST-150</td>
+                            <td>World History</td>
+                            <td>3</td>
+                            <td>TTh 9:30-11:00</td>
+                            <td>Prof. Brown</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            
+            <!-- Media Section -->
+            <section class="form-section media-section">
+                <h2>Campus Media Resources</h2>
+                <figure>
+                    <img src="https://via.placeholder.com/600x300/4CAF50/white?text=Campus+Virtual+Tour" 
+                         alt="Campus Virtual Tour Preview" 
+                         width="600" height="300"
+                         style="border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    <figcaption>Take a virtual tour of our beautiful campus facilities</figcaption>
+                </figure>
+                
+                <audio controls style="margin: 20px 0;">
+                    <source src="https://www.w3schools.com/html/horse.ogg" type="audio/ogg">
+                    <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+                <p><em>Listen to our campus welcome message</em></p>
+                
+                <video controls width="400" height="300" style="margin: 20px 0;">
+                    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                    <source src="https://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg">
+                    Your browser does not support the video tag.
+                </video>
+                <p><em>Campus orientation video</em></p>
+            </section>
+            
+            <!-- Registration Form -->
+            <form action="#" method="post" novalidate>
+                <!-- Personal Information -->
+                <section class="form-section">
+                    <h2>Personal Information</h2>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name *</label>
+                            <input type="text" 
+                                   id="firstName" 
+                                   name="firstName" 
+                                   placeholder="Enter your first name"
+                                   autocomplete="given-name"
+                                   required
+                                   minlength="2"
+                                   maxlength="50"
+                                   pattern="[A-Za-z\s]+">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="lastName">Last Name *</label>
+                            <input type="text" 
+                                   id="lastName" 
+                                   name="lastName" 
+                                   placeholder="Enter your last name"
+                                   autocomplete="family-name"
+                                   required
+                                   minlength="2"
+                                   maxlength="50"
+                                   pattern="[A-Za-z\s]+">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" 
+                               id="email" 
+                               name="email" 
+                               placeholder="your.email@example.com"
+                               autocomplete="email"
+                               required>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" 
+                                   id="phone" 
+                                   name="phone" 
+                                   placeholder="+1 (555) 123-4567"
+                                   autocomplete="tel"
+                                   required
+                                   pattern="[\+]?[0-9\s\-\(\)]+">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="dateOfBirth">Date of Birth *</label>
+                            <input type="date" 
+                                   id="dateOfBirth" 
+                                   name="dateOfBirth" 
+                                   autocomplete="bday"
+                                   required
+                                   min="1950-01-01"
+                                   max="2010-12-31">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="studentId">Student ID (Read-only)</label>
+                        <input type="text" 
+                               id="studentId" 
+                               name="studentId" 
+                               value="STU-2024-001"
+                               readonly
+                               class="readonly-field">
+                    </div>
+                </section>
+                
+                <!-- Address Information -->
+                <section class="form-section">
+                    <h2>Address Information</h2>
+                    
+                    <div class="form-group">
+                        <label for="street">Street Address *</label>
+                        <input type="text" 
+                               id="street" 
+                               name="street" 
+                               placeholder="123 Main Street"
+                               autocomplete="street-address"
+                               required>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="city">City *</label>
+                            <input type="text" 
+                                   id="city" 
+                                   name="city" 
+                                   placeholder="New York"
+                                   autocomplete="address-level2"
+                                   required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="state">State/Province *</label>
+                            <input type="text" 
+                                   id="state" 
+                                   name="state" 
+                                   placeholder="NY"
+                                   autocomplete="address-level1"
+                                   required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="zipCode">ZIP/Postal Code *</label>
+                            <input type="text" 
+                                   id="zipCode" 
+                                   name="zipCode" 
+                                   placeholder="10001"
+                                   autocomplete="postal-code"
+                                   required
+                                   pattern="[0-9A-Za-z\s\-]+">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="country">Country *</label>
+                        <select id="country" name="country" autocomplete="country" required>
+                            <option value="">Select your country</option>
+                            <option value="US">United States</option>
+                            <option value="CA">Canada</option>
+                            <option value="UK">United Kingdom</option>
+                            <option value="AU">Australia</option>
+                            <option value="DE">Germany</option>
+                            <option value="FR">France</option>
+                            <option value="JP">Japan</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </section>
+                
+                <!-- Academic Information -->
+                <section class="form-section">
+                    <h2>Academic Information</h2>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="program">Degree Program *</label>
+                            <select id="program" name="program" required>
+                                <option value="">Choose a program</option>
+                                <option value="computer-science">Computer Science</option>
+                                <option value="business">Business Administration</option>
+                                <option value="engineering">Engineering</option>
+                                <option value="liberal-arts">Liberal Arts</option>
+                                <option value="sciences">Natural Sciences</option>
+                                <option value="social-sciences">Social Sciences</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="startSemester">Start Semester *</label>
+                            <select id="startSemester" name="startSemester" required>
+                                <option value="">Select semester</option>
+                                <option value="fall-2024">Fall 2024</option>
+                                <option value="spring-2025">Spring 2025</option>
+                                <option value="summer-2025">Summer 2025</option>
+                                <option value="fall-2025">Fall 2025</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="gpa">Previous GPA</label>
+                        <input type="number" 
+                               id="gpa" 
+                               name="gpa" 
+                               placeholder="3.50"
+                               min="0.00"
+                               max="4.00"
+                               step="0.01">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="credits">Transfer Credits</label>
+                        <input type="number" 
+                               id="credits" 
+                               name="credits" 
+                               placeholder="0"
+                               min="0"
+                               max="120"
+                               step="1">
+                    </div>
+                </section>
+                
+                <!-- Preferences and Additional Information -->
+                <section class="form-section">
+                    <fieldset>
+                        <legend>Study Preferences</legend>
+                        
+                        <div class="radio-group">
+                            <div class="radio-item">
+                                <input type="radio" id="fullTime" name="studyMode" value="full-time" required>
+                                <label for="fullTime">Full-time</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="partTime" name="studyMode" value="part-time" required>
+                                <label for="partTime">Part-time</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="online" name="studyMode" value="online" required>
+                                <label for="online">Online</label>
+                            </div>
+                        </div>
+                    </fieldset>
+                    
+                    <fieldset>
+                        <legend>Areas of Interest (Select all that apply)</legend>
+                        
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="research" name="interests" value="research">
+                                <label for="research">Research Opportunities</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="internships" name="interests" value="internships">
+                                <label for="internships">Internship Programs</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="studyAbroad" name="interests" value="study-abroad">
+                                <label for="studyAbroad">Study Abroad</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="clubs" name="interests" value="clubs">
+                                <label for="clubs">Student Organizations</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="athletics" name="interests" value="athletics">
+                                <label for="athletics">Athletics</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="arts" name="interests" value="arts">
+                                <label for="arts">Arts & Culture</label>
+                            </div>
+                        </div>
+                    </fieldset>
+                    
+                    <div class="form-group">
+                        <label for="website">Personal Website/Portfolio</label>
+                        <input type="url" 
+                               id="website" 
+                               name="website" 
+                               placeholder="https://yourportfolio.com"
+                               autocomplete="url">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="linkedin">LinkedIn Profile</label>
+                        <input type="url" 
+                               id="linkedin" 
+                               name="linkedin" 
+                               placeholder="https://linkedin.com/in/yourprofile"
+                               pattern="https://.*linkedin\.com/.*">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Create Password *</label>
+                        <input type="password" 
+                               id="password" 
+                               name="password" 
+                               placeholder="Enter a secure password"
+                               autocomplete="new-password"
+                               required
+                               minlength="8"
+                               pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}">
+                        <small>Password must be at least 8 characters with uppercase, lowercase, number, and special character</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password *</label>
+                        <input type="password" 
+                               id="confirmPassword" 
+                               name="confirmPassword" 
+                               placeholder="Confirm your password"
+                               autocomplete="new-password"
+                               required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="documents">Upload Documents</label>
+                        <input type="file" 
+                               id="documents" 
+                               name="documents" 
+                               multiple
+                               accept=".pdf,.doc,.docx,.jpg,.png">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="comments">Additional Comments</label>
+                        <textarea id="comments" 
+                                  name="comments" 
+                                  rows="5" 
+                                  placeholder="Please share any additional information or special circumstances..."
+                                  maxlength="1000"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="referralSource">How did you hear about us?</label>
+                        <select id="referralSource" name="referralSource">
+                            <option value="">Select an option</option>
+                            <option value="search-engine">Search Engine</option>
+                            <option value="social-media">Social Media</option>
+                            <option value="friend-family">Friend/Family</option>
+                            <option value="advertisement">Advertisement</option>
+                            <option value="school-counselor">School Counselor</option>
+                            <option value="education-fair">Education Fair</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="newsletter" name="newsletter" value="yes">
+                            <label for="newsletter">Subscribe to our newsletter for updates and announcements</label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="terms" name="terms" value="accepted" required>
+                            <label for="terms">I agree to the Terms and Conditions and Privacy Policy *</label>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Submit Section -->
+                <section class="submit-section">
+                    <button type="submit">Submit Registration</button>
+                    <button type="reset">Clear Form</button>
+                </section>
+            </form>
+        </main>
+        
+        <footer style="margin-top: 40px; padding-top: 20px; border-top: 2px solid #ddd; text-align: center; color: #666;">
+            <p>&copy; 2024 Academic Institution. All rights reserved.</p>
+            <p>For technical support, contact: <a href="mailto:support@institution.edu">support@institution.edu</a></p>
+        </footer>
+    </div>
+    
+    <script>
+        // Form validation and enhancement
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.querySelector('form');
+            const password = document.getElementById('password');
+            const confirmPassword = document.getElementById('confirmPassword');
+            
+            // Password confirmation validation
+            function validatePassword() {
+                if (password.value !== confirmPassword.value) {
+                    confirmPassword.setCustomValidity("Passwords don't match");
+                } else {
+                    confirmPassword.setCustomValidity('');
+                }
+            }
+            
+            password.addEventListener('change', validatePassword);
+            confirmPassword.addEventListener('keyup', validatePassword);
+            
+            // Form submission handling
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Custom validation checks
+                let isValid = true;
+                const requiredFields = form.querySelectorAll('[required]');
+                
+                requiredFields.forEach(field => {
+                    if (!field.value.trim()) {
+                        field.style.borderColor = '#f44336';
+                        isValid = false;
+                    } else {
+                        field.style.borderColor = '#4CAF50';
+                    }
+                });
+                
+                if (isValid) {
+                    alert('Registration submitted successfully! (This is a demo - no data was actually sent)');
+                } else {
+                    alert('Please fill in all required fields correctly.');
+                }
+            });
+            
+            // Real-time validation feedback
+            const inputs = form.querySelectorAll('input, select, textarea');
+            inputs.forEach(input => {
+                input.addEventListener('blur', function() {
+                    if (this.hasAttribute('required') && !this.value.trim()) {
+                        this.style.borderColor = '#f44336';
+                    } else if (this.checkValidity()) {
+                        this.style.borderColor = '#4CAF50';
+                    } else {
+                        this.style.borderColor = '#f44336';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
